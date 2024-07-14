@@ -45,6 +45,20 @@ const Settings = async(props: Props) => {
         return res
     }
 
+    const updateUserInfo = async(name: string) => {
+        'use server'
+        const res = await db.user.update({
+            where: {
+                clerkId: authUser.id
+            },
+            data: {
+                name
+            }
+        })
+
+        return res
+    }
+    
     return (
         <div className='flex flex-col gap-4'>
             <h1 className='
@@ -64,7 +78,10 @@ const Settings = async(props: Props) => {
                     onDelete = {removeProfilePicture}
                     onUpload = {uploadProfilePicture}
                 />
-                <ProfileForm/>
+                <ProfileForm
+                    user={user}
+                    onUpdate={updateUserInfo}
+                />
             </div>
         </div>
     )

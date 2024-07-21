@@ -26,9 +26,7 @@ const Connections = (props: Props) => {
                         title={connection.title}
                         description={connection.description}
                         type={connection.title}
-                    >
-                        {connection.title}
-                    </ConnectionCard>
+                    />
                 ))}
             </section>
         </div>

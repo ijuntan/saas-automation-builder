@@ -4,11 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider"
 import {
   ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton
 } from '@clerk/nextjs'
+import ModalProvider from "@/providers/modal-provider";
 
 const dm_sans = DM_Sans({ subsets: ["latin"] });
 
@@ -32,7 +29,9 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <ModalProvider>
             {children}
+            </ModalProvider>
           </ThemeProvider>
         </body>
       </html>

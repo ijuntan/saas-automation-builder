@@ -1,24 +1,27 @@
 import React from 'react'
 import Workflow from './workflow'
+import { onGetWorkflows } from '../_actions/workflow-connections'
 
 type Props = {}
 
-const Workflows = (props: Props) => {
+const Workflows = async(props: Props) => {
+  const workflows = await onGetWorkflows()
+
   return (
     <div className='relative flex flex-col gap-4'>
         <section className='flex flex-col gap-4 px-4'>
-            <Workflow
-                id='1'
-                description='Creating a test workflow'
-                name="Automation"
-                publish={false}
-            />
-            <Workflow
-                id='1'
-                description='Creating a test workflow'
-                name="Automation"
-                publish={false}
-            />
+          {
+            workflows?.length
+            ?
+            workflows.map((workflow: any) => (
+              <Workflow
+                key={workflow.id}
+                {...workflow}
+              />
+            ))
+            :
+            <div className='mt-28 text-center'>No workflows found</div>
+          }
         </section>
     </div>
   )

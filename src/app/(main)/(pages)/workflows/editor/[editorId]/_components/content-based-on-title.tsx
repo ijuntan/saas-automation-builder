@@ -45,16 +45,22 @@ const ContentBasedOnTitle = ({
 
   useEffect(() => {
     const reqGoogle = async () => {
-      const response: { data: { message: { files: any } } } = await axios.get(
-        '/api/drive'
-      )
-      if (response) {
-        console.log(response.data.message.files[0])
-        toast.message("Fetched File")
-        setFile(response.data.message.files[0])
-      } else {
-        toast.error('Something went wrong')
+      try {
+        const response: { data: { message: { files: any } } } = await axios.get(
+          '/api/drive'
+        )
+        if (response) {
+          toast.message("Fetched File")
+          setFile(response.data.message.files[0])
+        } else {
+          toast.error('Something went wrong')
+        }
       }
+      catch (error) {
+        toast.error('Something went wrong')
+        console.error(error)
+      }
+      
     }
     reqGoogle()
   }, [])

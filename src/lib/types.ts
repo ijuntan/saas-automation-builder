@@ -55,3 +55,8 @@ export type EditorNodeType = {
     data: EditorCanvasCardType
 }
 
+export type EditorEdgeType = { 
+    id: string,
+    source: string,
+    target: string 
+}

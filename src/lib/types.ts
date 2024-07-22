@@ -60,3 +60,10 @@ export type EditorEdgeType = {
     source: string,
     target: string 
 }
+
+export const nodeMapper: Record<string, string> = {
+    Notion: 'notionNode',
+    Slack: 'slackNode',
+    Discord: 'discordNode',
+    'Google Drive': 'googleNode',
+}

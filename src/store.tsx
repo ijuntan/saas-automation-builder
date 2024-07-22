@@ -8,7 +8,7 @@ export interface Option {
     [key: string]: string | boolean | undefined
 }
 
-type FuzzieStore = {
+type ZutoStore = {
     googleFile: any
     setGoogleFile: (googleFile: any) => void
     slackChannels: Option[]
@@ -17,7 +17,7 @@ type FuzzieStore = {
     setSelectedSlackChannels: (channels: Option[]) => void
 }
 
-export const useFuzzieStore = create<FuzzieStore>()((set) => ({
+export const useZutoStore = create<ZutoStore>()((set) => ({
     googleFile: {},
     setGoogleFile: (googleFile) => set({ googleFile }),
     slackChannels: [],

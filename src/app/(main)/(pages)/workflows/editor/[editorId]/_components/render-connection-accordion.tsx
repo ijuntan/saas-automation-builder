@@ -5,7 +5,7 @@ import MultipleSelector from '@/components/ui/multiple-selector'
 import { Connection } from '@/lib/types'
 import { useNodeConnections } from '@/providers/connections-provider'
 import { EditorState } from '@/providers/editor-provider'
-import { useFuzzieStore } from '@/store'
+import { useZutoStore } from '@/store'
 import React from 'react'
 
 type Props = {
@@ -28,7 +28,7 @@ const RenderConnectionAccordion = ({
     } = connection
 
     const { nodeConnection } = useNodeConnections()
-    const { slackChannels, selectedSlackChannels, setSelectedSlackChannels } = useFuzzieStore()
+    const { slackChannels, selectedSlackChannels, setSelectedSlackChannels } = useZutoStore()
 
     const connectionData = (nodeConnection as any)[connectionKey]
     const isConnected = alwaysTrue || (nodeConnection[connectionKey] && accessTokenKey && connectionData[accessTokenKey!])

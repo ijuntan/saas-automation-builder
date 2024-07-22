@@ -1,6 +1,6 @@
 import { auth, clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
-const isPublicRoute = createRouteMatcher(['/', '/api/clerk-webhook', '/api/drive-activity/notification', '/sign-in(.*)', '/sign-out(.*)']);
+const isPublicRoute = createRouteMatcher(['/', '/api/clerk-webhook', '/api/drive-activity/notification', '/sign-in(.*)', '/sign-out(.*)', '/api/payment/success']);
 const isIgnoredRoute = createRouteMatcher([
   '/api/auth/callback/discord',
   '/api/auth/callback/notion',

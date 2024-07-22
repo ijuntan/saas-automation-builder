@@ -92,7 +92,7 @@ export default function Home() {
                 up {"you'll"} never leave us after this!
                 <ul className="my-4 flex flex-col gap-2">
                   <li className="flex items-center gap-2">
-                    <CheckIcon />3 Free automations
+                    <CheckIcon />10 Free automations
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckIcon />
@@ -144,7 +144,7 @@ export default function Home() {
                 Unlock enhanced capabilities with our Pro plan. Elevate your productivity and automate more tasks effortlessly.
                 <ul className="my-4 flex flex-col gap-2">
                   <li className="flex items-center gap-2">
-                    <CheckIcon />10 Free automations
+                    <CheckIcon />100 automations
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckIcon />
@@ -197,11 +197,11 @@ export default function Home() {
                 <ul className="my-4 flex flex-col gap-2">
                   <li className="flex items-center gap-2">
                     <CheckIcon />
-                    Unlimited automation
+                    Unlimited Automations
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckIcon />
-                    Unlimited tasks
+                    Unlimited Tasks
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckIcon />

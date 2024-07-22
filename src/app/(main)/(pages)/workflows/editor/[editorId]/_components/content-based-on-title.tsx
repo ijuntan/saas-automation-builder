@@ -19,10 +19,6 @@ import axios from 'axios'
 import { toast } from 'sonner'
 import { Option } from '@/store'
 
-interface GroupOption {
-  [key: string]: Option[]
-}
-
 type Props = {
   nodeConnection: ConnectionProviderProps
   newState: EditorState
@@ -96,6 +92,7 @@ const ContentBasedOnTitle = ({
           </CardHeader>
         )}
         <div className="flex flex-col gap-3 px-6 py-3 pb-20">
+
           <p>{title === 'Notion' ? 'Values to be stored' : 'Message'}</p>
 
           <Input
@@ -120,6 +117,7 @@ const ContentBasedOnTitle = ({
               </CardContent>
             </Card>
           )}
+
           {title === 'Google Drive' && <GoogleDriveFiles />}
           <ActionButton
             currentService={title}

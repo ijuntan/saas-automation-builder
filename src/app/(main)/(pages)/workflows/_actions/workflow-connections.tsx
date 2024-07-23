@@ -133,7 +133,22 @@ export const onGetWorkflows = async () => {
     if (workflow) return workflow
   }
 }
+export const onGetRecentWorkflows = async() => {
+  const user = await currentUser()
+  if(user) {
+    const workflows = await db.workflows.findMany({
+      where: {
+        userId: user.id
+      },
+      take: 3,
+      orderBy: {
+        createdAt: 'desc'
+      }
+    })
 
+    if(workflows) return workflows
+  }
+}
 
 export const onCreateWorkflow = async (name: string, description: string) => {
   const user = await currentUser()
